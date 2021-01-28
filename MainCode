@@ -265,11 +265,3 @@ print("Code is running")
 
 client = MyClient()
 client.run("Bot_token_here")
-
-
-# To create a discord bot, we require an external library called "discord.py"
-# We get this at https://discordpy.readthedocs.io/en/latest/
-# To install the package, we require pip i.e. something to install external packages.
-# To check the pip version, type the command: pip --version
-# Note: You must check if it is associated with python 3
-# To install a package using pip, type: pip install {package name}
