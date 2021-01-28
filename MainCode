@@ -140,6 +140,10 @@ class MyClient(discord.Client):
                 print("COFFEE!!")
                 await message.channel.send("<:red_archive:777977960359526401>")
 
+            if msg == 'Z!PING':
+                print('Ping pong') 
+                await message.channel.send(f'Pong! | message took {round(client.latency * 1000)}ms')
+
 #P!OWNER
                 
     #ATLANTIS
@@ -264,4 +268,4 @@ class MyClient(discord.Client):
 print("Code is running")
 
 client = MyClient()
-client.run("Bot_token_here")
+client.run("BOT_TOKEN_HERE")
