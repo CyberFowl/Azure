@@ -11,164 +11,164 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
 
-        msg = message.content.upper()
+        mcu = message.content.upper()
 
         if message.author != client.user:
             
-            if "doggo" in msg:
+            if "doggo" in mcu:
                 print("Message received")
                 await message.channel.send(":heart_eyes:")
                 
 #SWEAR STOP
-            if "||" not in msg and message.guild.id != 570023579215724547:
-                if "WTF" in msg:
+            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697:
+                if "WTF" in mcu:
                     print("wtf")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "FECK" in msg:
+                if "FECK" in mcu:
                     print("feck")
                     await message.channel.send("What *is* 'Feck'?!? :joy:")
-                if "FUCK" in msg:
+                if "FUCK" in mcu:
                     print("fuck")
                     await message.channel.send("LANGUAGE!!!")
-                if "SHIT" in msg:
+                if "SHIT" in mcu:
                     print("shit")
                     await message.channel.send("LANGUAGE!!!")
-                if "BITCH" in msg:
+                if "BITCH" in mcu:
                     print("bitch")
                     await message.channel.send("LANGUAGE!!!")
-                if "BASTARD" in msg:
+                if "BASTARD" in mcu:
                     print("bastard")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "RETARDED" in msg:
+                if "RETARDED" in mcu:
                     print("retarded")
                     await message.channel.send("LANGUAGE!!!")
-                if "NIGGER" in msg:
+                if "NIGGER" in mcu:
                     print("nigger")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "NIGGA" in msg:
+                if "NIGGA" in mcu:
                     print("nigga")
                     await message.channel.send("LANGUAGE!!!")
-                if "SH*T" in msg:
+                if "SH*T" in mcu:
                     print("sh*t")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "STFU" in msg:
+                if "STFU" in mcu:
                     print("stfu")
                     await message.channel.send("LANGUAGE!!!")
-                if "ASSHOLE" in msg:
+                if "ASSHOLE" in mcu:
                     print("asshole")
                     await message.channel.send("LANGUAGE!!!")
-                if "FECKING" in msg:
+                if "FECKING" in mcu:
                     print("fecking")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
                     
-                if "DAMN" in msg:
+                if "DAMN" in mcu:
                     print("damn")
                     await message.channel.send("I'm not going to 'LANGUAGE!!!' you, but, don't use ||damn|| too much...")
 
 #STARTS WITH
 
-            if msg.startswith("YAY"):
+            if mcu.startswith("YAY"):
                 await message.channel.send(":tada:")
-            if msg.startswith("YEY"):
+            if mcu.startswith("YEY"):
                 await message.channel.send(":tada:")
-            if message.author.id != 743009565242556526:
-                if msg.startswith("KILL"):
-                    print("NO HITMAN STRIKE")
-                    await message.channel.send("Sorry, only <@!743009565242556526> can order hitman strikes")
+            #if message.author.id != 743009565242556526:
+                #if mcu.startswith("KILL"):
+                    #print("NO HITMAN STRIKE")
+                    #await message.channel.send("Sorry, only <@!743009565242556526> can order hitman strikes")
 
             if message.author.id == 743009565242556526:
-                if msg.startswith("KILL"):
+                if mcu.startswith("KILL"):
                     killed = msg.split(" ")[-1]
                     print("KILLED USER")
                     await message.channel.send("Shot " + killed + "\n" + "https://tenor.com/view/shoot-gift-gif-13384546")
-            #if msg.startswith("HALLO"):
+            #if mcu.startswith("HALLO"):
                 #await message.channel.send("Hey")
 
 #EVERYBODY - Fun
             h = ["Heads","Tails"]
-            if msg == "Z!COINFLIP":
+            if mcu == "Z!COINFLIP":
                 n = random.randint(h[0],h[1])
                 print("Coinflip")
                 await message.channel.send(n)
 
-            if msg == "REE IS DUMB":
+            if mcu == "REE IS DUMB":
                 print("Message received")
                 await message.channel.send("NO, NEITHER REEEEE THE DESTROYER NOR REEEEBEKA IS DUMB!! ||Though maybe you are!!||")
 
-            if msg == "TOILET":
+            if mcu == "TOILET":
                 print("elmo in a toilet")
                 await message.channel.send("https://tenor.com/view/elmo-poop-pooping-time-to-poop-bathroom-gif-5885298")
 
-            if msg == "F FOR RESPECT":
+            if mcu == "F FOR RESPECT":
                 print("F FOR RESPECT")
                 time.sleep(2)
                 await message.channel.send("F")
 
-            if msg == "BRUH":
+            if mcu == "BRUH":
                 print("BRUH MOMENT")
                 await message.channel.send("*(Bruh moment)*")
 
-            if msg == "DRYICE CHARACTER SKETCH":
+            if mcu == "DRYICE CHARACTER SKETCH":
                 print("Message received")
                 await message.channel.send("DryIce weird bruh.")
 
-            if msg == "HOMEWORK TIME" or msg == "I GTG DO HOMEWORK":
+            if mcu == "HOMEWORK TIME" or mcu == "I GTG DO HOMEWORK":
                 print("Message received")
                 await message.channel.send("Ugh homework sux")
 
-            if msg == "'HBD":
+            if mcu == "'HBD":
                 print("Message received")
                 await message.channel.send(":tada: :tada: Happy birthday!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
 
-            if msg == "WHOS RAMMY?":
+            if mcu == "WHOS RAMMY?":
                 print("Message received")
                 await message.channel.send("Rammy's weird, bruh.")
 
-            if msg == "PMUB D!":
+            if mcu == "PMUB D!":
                 print("PMUB D!")
                 await message.channel.send("!d bump")
 
-            if msg == "RR PLS":
+            if mcu == "RR PLS":
                 print ("rickroll")
                 embed=discord.Embed(title = "RR", url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
                 await message.channel.send(embed=embed)
 
-            if msg == "IS GRIFFIN WEIRD?" and message.author.id != 743009565242556526:
+            if mcu == "IS GRIFFIN WEIRD?" and message.author.id != 743009565242556526:
                 await message.channel.send("NOPE, Griffin created me!!")
 
-            if msg == "I LOVE COFFEE":
+            if mcu == "I LOVE COFFEE":
                 print("COFFEE!!")
                 await message.channel.send("<:red_archive:777977960359526401>")
 
-            if msg == 'Z!PING':
+            if mcu == 'Z!PING':
                 print('Ping pong') 
                 await message.channel.send(f'Pong! | message took {round(client.latency * 1000)}ms')
 
 #P!OWNER
                 
     #ATLANTIS
-            if msg == "P!OWNER" and message.guild.id == 788293597379166228:
+            if mcu == "P!OWNER" and message.guild.id == 788293597379166228:
                 print ("ping saanvi")
                 await message.channel.send("<@!727964715216797697>")
                 time.sleep(2)
                 await message.channel.send("Successfully Pinged Owner")
 
     #CULT O COFFEE
-            if msg == "P!OWNER" and message.guild.id == 769557583429369867:
+            if mcu == "P!OWNER" and message.guild.id == 769557583429369867:
                 print ("ping ree the des")
                 await message.channel.send("<@!690227486721966130>")
                 time.sleep(2)
                 await message.channel.send("Successfully Pinged Owner")
 
     #CHOCOLATE CULT
-            if msg == "P!OWNER" and message.guild.id == 775901922871214101:
+            if mcu == "P!OWNER" and message.guild.id == 775901922871214101:
                 print ("ping anna")
                 await message.channel.send("<@!760603081573400576>")
                 time.sleep(2)
                 await message.channel.send("Successfully Pinged Owner")
 
     #TECH TERRAIN
-            if msg == "P!OWNER" and message.guild.id == 746952048053977148:
+            if mcu == "P!OWNER" and message.guild.id == 746952048053977148:
                 print ("ping rammy")
                 await message.channel.send("<@!737661910194847836>")
                 time.sleep(2)
@@ -178,41 +178,41 @@ class MyClient(discord.Client):
 
             if message.author.id == 743009565242556526 or message.author.id == 690227486721966130:
 
-                if msg.startswith("GN"):
+                if mcu.startswith("GN"):
                     print("GOOD NIGHT")
                     await message.channel.send("Good Night!!")
 
-                if msg.startswith("YEET"):
+                if mcu.startswith("YEET"):
                     print("YEETED SOMEBODY")
                     await message.channel.send("YEETED" + "\n" + "https://tenor.com/view/yeet-lion-king-simba-rafiki-throw-gif-16194362")
 
-                if msg == ("PING"):
+                if mcu == ("PING"):
                     print("PING")
                     for i in range(1,10):
                         time.sleep(2)
-                        await message.channel.send("<@!690227486721966130>")
+                        await message.channel.send("<@!725945760629129277>")
 
-                if msg == "AZURE STATUS":
+                if mcu == "AZURE STATUS":
                     print("status report")
                     await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
 
-                if msg == "IS AR WEIRD?":
+                if mcu == "IS AR WEIRD?":
                     print("Message received")
                     await message.channel.send("Yep")
                 
-                if msg == ("DEL"):
-                    purge = msg.split(" ")[-1]
+                if mcu == ("DEL"):
+                    purge = mcu.split(" ")[-1]
                     await message.channel.purge(limit = 2)
 
-                if msg == "MUSIC PLS":
+                if mcu == "MUSIC PLS":
                     print("spotify link - boss")
                     embed=discord.Embed(title="Music", url="https://open.spotify.com/collection/tracks")
                     await message.channel.send(embed=embed)                    
 
-                if msg == "HELP":
+                if mcu == "HELP":
                     print("Message received")
                     await message.channel.send("¯\_(ツ)_/¯ What do you want help with? ||(Keeping in mind that I can't help a lot anyway)||")
-                if msg == "HMM CAN YOU MAKE ME A COFFEE?":
+                if mcu == "HMM CAN YOU MAKE ME A COFFEE?":
                     print("Message received")
                     await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
 
@@ -220,10 +220,10 @@ class MyClient(discord.Client):
 
             if message.author.id == 690227486721966130:
 
-                if msg == "HELP":
+                if mcu == "HELP":
                     print("Message received")
                     await message.channel.send("¯\_(ツ)_/¯ What do you want help with? ||(Keeping in mind that I can't help a lot anyway)||")
-                if msg == "HMM CAN YOU MAKE ME A COFFEE?":
+                if mcu == "HMM CAN YOU MAKE ME A COFFEE?":
                     print("Message received")
                     await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
 
@@ -231,30 +231,33 @@ class MyClient(discord.Client):
 
             if message.author.id == 743009565242556526:
 
-                if msg == "50 MEMBERS":
+                if mcu == "50 MEMBERS":
                     print("Message received")
                     await message.channel.send(":tada: :tada: YAY!!! 50 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
                     
-                if msg == "100 MEMBERS":
+                if mcu == "100 MEMBERS":
                     print("Message received")
                     await message.channel.send(":tada: :tada: YAY!!! 100 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
  
-                if msg == "150 MEMBERS":
+                if mcu == "150 MEMBERS":
                     print("Message received")
                     await message.channel.send(":tada: :tada: YAY!!! 150 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
  
-                if msg == "200 MEMBERS":
+                if mcu == "200 MEMBERS":
                     print("Message received")
                     await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
 
 #EMOJIS
-            if msg == "JS":
+            if mcu == "HUH?" and message.author.id == 743009565242556526:
+                print("Huh?")
+                await message.channel.send("<:JavaScriptlogo:800618033068245012>")
+            if mcu == "JS":
                 print("JS LOGO")
                 await message.channel.send("<:JavaScriptlogo:800618033068245012>")
-            if msg == "PYTHON":
+            if mcu == "PYTHON":
                 print("PYTHON LOGO")
                 await message.channel.send("<:pythonlogo:800620334554415115>")            
-            if msg == "NITRO FLEX" and message.author.id == 743009565242556526:
+            if mcu == "NITRO FLEX" and message.author.id == 743009565242556526:
                 print("NITRO FLEX")
                 await message.channel.send("<:CFLogo:800679960532615179>")
                 time.sleep(1)
@@ -263,6 +266,18 @@ class MyClient(discord.Client):
                 await message.channel.send("<:Griffin2k20:800679874309390346>")
                 time.sleep(1)
                 await message.channel.send("<:Azure:800679821013024769>")
+            if mcu.startswith("DISTRACT THEM") or mcu.startswith("DISTRACT HIM"):
+                print("Distraction dance")
+                await message.channel.send("<a:AmongDistracted:803394547203309619>")
+
+#EDITS
+            #if mcu == "EDIT TEST":
+                #edit = await message.channel.send("This")
+                #time.sleep(1)
+                #await edit.edit("This is")
+                #await edit.edit(content = "This is a")
+                #await edit.edit(content = "This is a long")
+                #await edit.edit(content = "This is a long message.")
 
 
 print("Code is running")
