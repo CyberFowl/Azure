@@ -77,19 +77,23 @@ class MyClient(discord.Client):
                     #await message.channel.send("Sorry, only <@!743009565242556526> can order hitman strikes")
 
             if message.author.id == 743009565242556526:
-                if mcu.startswith("KILL"):
-                    killed = msg.split(" ")[-1]
+                if mcu.startswith("Z!KILL"):
+                    killed = mcu.split(" ")[-1]
                     print("KILLED USER")
                     await message.channel.send("Shot " + killed + "\n" + "https://tenor.com/view/shoot-gift-gif-13384546")
             #if mcu.startswith("HALLO"):
                 #await message.channel.send("Hey")
 
 #EVERYBODY - Fun
-            h = ["Heads","Tails"]
-            if mcu == "Z!COINFLIP":
-                n = random.randint(h[0],h[1])
-                print("Coinflip")
-                await message.channel.send(n)
+
+            if mcu == "Z!OWNER":
+                print("Griffin info")
+
+            #h = ["Heads","Tails"]
+            #if mcu == "Z!COINFLIP":
+                #n = random.randint(h[0],h[1])
+                #print("Coinflip")
+                #await message.channel.send(n)
 
             if mcu == "REE IS DUMB":
                 print("Message received")
@@ -116,9 +120,10 @@ class MyClient(discord.Client):
                 print("Message received")
                 await message.channel.send("Ugh homework sux")
 
-            if mcu == "'HBD":
+            if mcu.startswith("Z!HBD"):
+                bday = mcu.split(" ")[-1]
                 print("Message received")
-                await message.channel.send(":tada: :tada: Happy birthday!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
+                await message.channel.send(":tada: :tada: Happy birthday" + bday + "!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
 
             if mcu == "WHOS RAMMY?":
                 print("Message received")
@@ -141,9 +146,18 @@ class MyClient(discord.Client):
                 await message.channel.send("<:red_archive:777977960359526401>")
 
             if mcu == 'Z!PING':
-                print('Ping pong') 
-                await message.channel.send(f'Pong! | message took {round(client.latency * 1000)}ms')
+                print('Z!ping') 
+                await message.channel.send(f":ping_pong: Pong! | Message took ***{round(client.latency * 1000)}ms*** to respond")
 
+            if mcu == "SACRIFICE!!":
+                print("Sacrifice!!")
+                await message.channel.send("https://tenor.com/view/dance-dancing-tribe-tribal-the-tribe-has-spoken-gif-16960649")
+
+            if mcu == "FLAMING ELMO":
+                print("Flaming elmo")
+                await message.channel.send("https://tenor.com/view/elmo-satan-fire-flame-burn-gif-4507786")
+
+            
 #P!OWNER
                 
     #ATLANTIS
@@ -186,11 +200,10 @@ class MyClient(discord.Client):
                     print("YEETED SOMEBODY")
                     await message.channel.send("YEETED" + "\n" + "https://tenor.com/view/yeet-lion-king-simba-rafiki-throw-gif-16194362")
 
-                if mcu == ("PING"):
-                    print("PING")
-                    for i in range(1,10):
-                        time.sleep(2)
-                        await message.channel.send("<@!725945760629129277>")
+                if mcu == ("WHOOOOO"):
+                    print("WHOOOOO")
+                    await message.channel.send(":tada: :confetti_ball:")
+                    await message.channel.send(":confetti_ball: :tada:")
 
                 if mcu == "AZURE STATUS":
                     print("status report")
@@ -248,16 +261,25 @@ class MyClient(discord.Client):
                     await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
 
 #EMOJIS
-            if mcu == "HUH?" and message.author.id == 743009565242556526:
+            if mcu== "Z!AVATAR":
+                print("Azure avatar")
+                await message.channel.send("<:Azure:800679821013024769>")
+
+            if mcu == ":SPOOKEDHAMSTER:" or mcu == ":SPOOKED HAMSTER:":
+                print(":spookedhamster:")
+                await message.channel.send("<:Hamster_spooked:793356985609093150>")
+
+            if mcu == "HUH?":# and message.author.id == 743009565242556526
                 print("Huh?")
-                await message.channel.send("<:JavaScriptlogo:800618033068245012>")
+                await message.channel.send("<:thonkingbutcool:793356545127612456>")
+                
             if mcu == "JS":
                 print("JS LOGO")
                 await message.channel.send("<:JavaScriptlogo:800618033068245012>")
             if mcu == "PYTHON":
                 print("PYTHON LOGO")
                 await message.channel.send("<:pythonlogo:800620334554415115>")            
-            if mcu == "NITRO FLEX" and message.author.id == 743009565242556526:
+            if mcu == "Z!NITRO FLEX" and message.author.id == 743009565242556526:
                 print("NITRO FLEX")
                 await message.channel.send("<:CFLogo:800679960532615179>")
                 time.sleep(1)
@@ -266,18 +288,19 @@ class MyClient(discord.Client):
                 await message.channel.send("<:Griffin2k20:800679874309390346>")
                 time.sleep(1)
                 await message.channel.send("<:Azure:800679821013024769>")
+                
             if mcu.startswith("DISTRACT THEM") or mcu.startswith("DISTRACT HIM"):
                 print("Distraction dance")
                 await message.channel.send("<a:AmongDistracted:803394547203309619>")
 
 #EDITS
-            #if mcu == "EDIT TEST":
-                #edit = await message.channel.send("This")
-                #time.sleep(1)
-                #await edit.edit("This is")
-                #await edit.edit(content = "This is a")
-                #await edit.edit(content = "This is a long")
-                #await edit.edit(content = "This is a long message.")
+            if mcu == "EDIT TEST":
+                edit = await message.channel.send("This")
+                time.sleep(1)
+                await edit.edit("This is")
+                await edit.edit(content = "This is a")
+                await edit.edit(content = "This is a long")
+                await edit.edit(content = "This is a long message.")
 
 
 print("Code is running")
