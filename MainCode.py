@@ -297,10 +297,14 @@ class MyClient(discord.Client):
             if mcu == "EDIT TEST":
                 edit = await message.channel.send("This")
                 time.sleep(1)
-                await edit.edit("This is")
+                await edit.edit(content = "This is")
+                time.sleep(2)
                 await edit.edit(content = "This is a")
+                time.sleep(2)
                 await edit.edit(content = "This is a long")
+                time.sleep(2)
                 await edit.edit(content = "This is a long message.")
+                time.sleep(2)
 
 
 print("Code is running")
