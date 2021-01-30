@@ -269,10 +269,6 @@ class MyClient(discord.Client):
                 print(":spookedhamster:")
                 await message.channel.send("<:Hamster_spooked:793356985609093150>")
 
-            if mcu == "HUH?":# and message.author.id == 743009565242556526
-                print("Huh?")
-                await message.channel.send("<:thonkingbutcool:793356545127612456>")
-                
             if mcu == "JS":
                 print("JS LOGO")
                 await message.channel.send("<:JavaScriptlogo:800618033068245012>")
@@ -305,6 +301,12 @@ class MyClient(discord.Client):
                 time.sleep(2)
                 await edit.edit(content = "This is a long message.")
                 time.sleep(2)
+
+#REACTIONS
+            if mcu == "HUH?":
+                print("Huh?")
+                thonkingbutcool = client.get_emoji(793356545127612456)
+                await message.add_reaction(thonkingbutcool)
 
 
 print("Code is running")
