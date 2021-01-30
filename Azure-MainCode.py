@@ -1,13 +1,14 @@
 import discord
 import time
 import random
-
+#ODA1MDU3MjYxMjM0OTQ2MDQ4.YBVWAA.5yMOAHfREEo7_VeUuISRMuiplk8 bruh
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print("Logged in")
 
-        await client.change_presence(activity=discord.Game("Azure is awesome!!"))
+        #game = discord.Game("with the API")
+        await client.change_presence(status = discord.Status.idle)#, activity = game)
 
     async def on_message(self, message):
 
@@ -157,6 +158,10 @@ class MyClient(discord.Client):
                 print("Flaming elmo")
                 await message.channel.send("https://tenor.com/view/elmo-satan-fire-flame-burn-gif-4507786")
 
+            if mcu.startswith("Z!PURGE"):
+                purge = mcu.split(" ")[-1]
+                await message.channel.purge(limit = int((purge)) + 1)
+
             
 #P!OWNER
                 
@@ -212,10 +217,6 @@ class MyClient(discord.Client):
                 if mcu == "IS AR WEIRD?":
                     print("Message received")
                     await message.channel.send("Yep")
-                
-                if mcu == ("DEL"):
-                    purge = mcu.split(" ")[-1]
-                    await message.channel.purge(limit = 2)
 
                 if mcu == "MUSIC PLS":
                     print("spotify link - boss")
@@ -257,6 +258,14 @@ class MyClient(discord.Client):
                     await message.channel.send(":tada: :tada: YAY!!! 150 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
  
                 if mcu == "200 MEMBERS":
+                    print("Message received")
+                    await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
+
+                if mcu == "250 MEMBERS":
+                    print("Message received")
+                    await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
+
+                if mcu == "300 MEMBERS":
                     print("Message received")
                     await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
 
@@ -307,6 +316,11 @@ class MyClient(discord.Client):
                 print("Huh?")
                 thonkingbutcool = client.get_emoji(793356545127612456)
                 await message.add_reaction(thonkingbutcool)
+
+            #if mcu == "OH K":
+                #print("OH K")
+                #thonkingbutcool = client.get_emoji(793356545127612456)
+                #await message.add_reaction(thonkingbutcool)
 
 
 print("Code is running")
