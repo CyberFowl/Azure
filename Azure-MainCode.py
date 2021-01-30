@@ -220,7 +220,31 @@ class MyClient(discord.Client):
                 if mcu == "MUSIC PLS":
                     print("spotify link - boss")
                     embed=discord.Embed(title="Music", url="https://open.spotify.com/collection/tracks")
-                    await message.channel.send(embed=embed)                    
+                    await message.channel.send(embed=embed)
+
+                if msg.startswith("z!remember"):
+                    recall = msg.split(" ")[1:]
+                    await message.channel.send("Remembered. Use z!recall to display it again.")
+                listToStr = " ".join(recall)
+                if msg == "z!recall":
+                    await message.channel.send(listToStr)
+                    await message.channel.send("Here you go ^")
+
+                if msg.startswith("z!remember2"):
+                    recall2 = msg.split(" ")[1:]
+                    await message.channel.send("Remembered. Use z!recall2 to display it again.")
+                listToStr2 = " ".join(recall2)
+                if msg == "z!recall2":
+                    await message.channel.send(listToStr2)
+                    await message.channel.send("Here you go ^")
+
+                if msg.startswith("z!remember3"):
+                    recall3 = msg.split(" ")[1:]
+                    await message.channel.send("Remembered. Use z!recall3 to display it again.")
+                listToStr3 = " ".join(recall3)
+                if msg == "z!recall3":
+                    await message.channel.send(listToStr3)
+                    await message.channel.send("Here you go ^")
 
                 if mcu == "HELP":
                     print("Message received")
