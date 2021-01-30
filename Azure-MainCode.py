@@ -1,7 +1,6 @@
 import discord
 import time
 import random
-#ODA1MDU3MjYxMjM0OTQ2MDQ4.YBVWAA.5yMOAHfREEo7_VeUuISRMuiplk8 bruh
 
 class MyClient(discord.Client):
     async def on_ready(self):
