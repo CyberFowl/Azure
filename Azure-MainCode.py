@@ -6,13 +6,21 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print("Logged in")
 
-        #game = discord.Game("with the API")
-        await client.change_presence(status = discord.Status.idle)#, activity = game)
+#        await client.change_presence(status = discord.Status.idle)
+#        await client.change_presence(activity=discord.Game(name="tag with the wolves"))
+#        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
+#        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the wolves howl"))
+#        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
+#        await client.change_presence(activity=discord.Activity.watching, name="the pack")) 
+
+    async def on_member_join(member):
+        await client.send_message(member,"Welcome!")
 
     async def on_message(self, message):
 
-        mcu = message.content.upper()
+        global recall
 
+        mcu = message.content.upper()
         if message.author != client.user:
             
             if "doggo" in mcu:
@@ -20,7 +28,7 @@ class MyClient(discord.Client):
                 await message.channel.send(":heart_eyes:")
                 
 #SWEAR STOP
-            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697:
+            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697 and message.channel.id != 802285907381059685:
                 if "WTF" in mcu:
                     print("wtf")
                     await message.channel.send("HEY!!! NO SWEARING!!!")
@@ -125,6 +133,11 @@ class MyClient(discord.Client):
                 print("Message received")
                 await message.channel.send(":tada: :tada: Happy birthday" + bday + "!!!! :tada: :tada:" + "\n" + "https://tenor.com/bdecb.gif")
 
+            if mcu.startswith("Z!HUG"):
+                hug = mcu.split(" ")[-1]
+                print("hug")
+                await message.channel.send("You hug " + hug + "\n" + "https://tenor.com/view/dog-hug-bff-best-friend-friend-gif-9512793")
+
             if mcu == "WHOS RAMMY?":
                 print("Message received")
                 await message.channel.send("Rammy's weird, bruh.")
@@ -162,6 +175,11 @@ class MyClient(discord.Client):
                 await message.channel.purge(limit = int((purge)) + 1)
 
             
+            if mcu == "MUSIC PLS" and message.author.id != 743009565242556526:
+                embed=discord.Embed(title="Spotify: Liked songs", url="https://open.spotify.com/collection/tracks")
+                await message.channel.send(embed=embed)
+
+
 #P!OWNER
                 
     #ATLANTIS
@@ -204,12 +222,19 @@ class MyClient(discord.Client):
                     print("YEETED SOMEBODY")
                     await message.channel.send("YEETED" + "\n" + "https://tenor.com/view/yeet-lion-king-simba-rafiki-throw-gif-16194362")
 
-                if mcu == ("WHOOOOO"):
-                    print("WHOOOOO")
-                    await message.channel.send(":tada: :confetti_ball:")
-                    await message.channel.send(":confetti_ball: :tada:")
+                if mcu == ("P!RTD"):
+                    print("PING REE THE DES")
+                    for i in range(1,6):
+                        await message.channel.send("<@!690227486721966130>")
+                        time.sleep(2)
 
-                if mcu == "AZURE STATUS":
+                if mcu == ("P!RMY"):
+                    print("PING RAMMY")
+                    for i in range(1,6):
+                        await message.channel.send("<@!737661910194847836>")
+                        time.sleep(2)		
+                    
+                if mcu == "Z!STATUS":
                     print("status report")
                     await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
 
@@ -219,32 +244,33 @@ class MyClient(discord.Client):
 
                 if mcu == "MUSIC PLS":
                     print("spotify link - boss")
-                    embed=discord.Embed(title="Music", url="https://open.spotify.com/collection/tracks")
+                    embed=discord.Embed(title="Spotify: Liked Songs.", url="https://open.spotify.com/collection/tracks")
                     await message.channel.send(embed=embed)
+                    await message.channel.send("Here you go boss!")
 
-                if msg.startswith("z!remember"):
-                    recall = msg.split(" ")[1:]
-                    await message.channel.send("Remembered. Use z!recall to display it again.")
-                listToStr = " ".join(recall)
-                if msg == "z!recall":
-                    await message.channel.send(listToStr)
-                    await message.channel.send("Here you go ^")
+                #if mcu.startswith("z!remember") and not mcu.startswith("z!remember2") and not mcu.startswith("z!remember3"):
+                #    recall = mcu.split(" ")[1:]
+                #    await message.channel.send("Remembered. Use z!recall to display it again.")
+                #listToStr = " ".join(recall)
+                #if mcu == "z!recall":
+                #    await message.channel.send(listToStr)
+                #    await message.channel.send("Here you go ^")
 
-                if msg.startswith("z!remember2"):
-                    recall2 = msg.split(" ")[1:]
-                    await message.channel.send("Remembered. Use z!recall2 to display it again.")
-                listToStr2 = " ".join(recall2)
-                if msg == "z!recall2":
-                    await message.channel.send(listToStr2)
-                    await message.channel.send("Here you go ^")
+                #if mcu.startswith("z!remember2"):
+                #    recall2 = mcu.split(" ")[1:]
+                #    await message.channel.send("Remembered. Use z!recall2 to display it again.")
+                #listToStr2 = " ".join(recall2)
+                #if mcu == "z!recall2":
+                #    await message.channel.send(listToStr2)
+                #    await message.channel.send("Here you go ^")
 
-                if msg.startswith("z!remember3"):
-                    recall3 = msg.split(" ")[1:]
-                    await message.channel.send("Remembered. Use z!recall3 to display it again.")
-                listToStr3 = " ".join(recall3)
-                if msg == "z!recall3":
-                    await message.channel.send(listToStr3)
-                    await message.channel.send("Here you go ^")
+                #if mcu.startswith("z!remember3"):
+                #    recall3 = mcu.split(" ")[1:]
+                #    await message.channel.send("Remembered. Use z!recall3 to display it again.")
+                #listToStr3 = " ".join(recall3)
+                #if mcu == "z!recall3":
+                #    await message.channel.send(listToStr3)
+                #    await message.channel.send("Here you go ^")
 
                 if mcu == "HELP":
                     print("Message received")
@@ -263,6 +289,15 @@ class MyClient(discord.Client):
                 if mcu == "HMM CAN YOU MAKE ME A COFFEE?":
                     print("Message received")
                     await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
+
+#REEEEBEKA_
+            
+            if message.author.id == 762793879522639904:
+
+                if mcu == "G!HELP":
+                    for i in range(1,11):
+                        await message.channel.send("<@!743009565242556526>")
+                        time.sleep(2)
 
 #MEMBER COUNT - CYBERFOWL ONLY
 
@@ -324,7 +359,7 @@ class MyClient(discord.Client):
 #EDITS
             if mcu == "EDIT TEST":
                 edit = await message.channel.send("This")
-                time.sleep(1)
+                time.sleep(2)
                 await edit.edit(content = "This is")
                 time.sleep(2)
                 await edit.edit(content = "This is a")
@@ -335,10 +370,8 @@ class MyClient(discord.Client):
                 time.sleep(2)
 
 #REACTIONS
-            if mcu == "HUH?":
-                print("Huh?")
-                thonkingbutcool = client.get_emoji(793356545127612456)
-                await message.add_reaction(thonkingbutcool)
+#            thonkingbutcool = client.get_emoji(793356545127612456)
+#            await message.add_reaction(thonkingbutcool)
 
             #if mcu == "OH K":
                 #print("OH K")
@@ -349,4 +382,4 @@ class MyClient(discord.Client):
 print("Code is running")
 
 client = MyClient()
-client.run("BOT_TOKEN_HERE")
+client.run("NzgzNjQ4NDg1MTUyNzg0NDA2.X8dzhg.PpH4az9OSnakulXAB66HxMNWqBk")
