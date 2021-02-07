@@ -27,70 +27,22 @@ class MyClient(discord.Client):
                 print("Message received")
                 await message.channel.send(":heart_eyes:")
                 
-#SWEAR STOP
-            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697 and message.channel.id != 802285907381059685:
-                if "WTF" in mcu:
-                    print("wtf")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "FECK" in mcu:
-                    print("feck")
-                    await message.channel.send("What *is* 'Feck'?!? :joy:")
-                if "FUCK" in mcu:
-                    print("fuck")
-                    await message.channel.send("LANGUAGE!!!")
-                if "SHIT" in mcu:
-                    print("shit")
-                    await message.channel.send("LANGUAGE!!!")
-                if "BITCH" in mcu:
-                    print("bitch")
-                    await message.channel.send("LANGUAGE!!!")
-                if "BASTARD" in mcu:
-                    print("bastard")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "RETARDED" in mcu:
-                    print("retarded")
-                    await message.channel.send("LANGUAGE!!!")
-                if "NIGGER" in mcu:
-                    print("nigger")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "NIGGA" in mcu:
-                    print("nigga")
-                    await message.channel.send("LANGUAGE!!!")
-                if "SH*T" in mcu:
-                    print("sh*t")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "STFU" in mcu:
-                    print("stfu")
-                    await message.channel.send("LANGUAGE!!!")
-                if "ASSHOLE" in mcu:
-                    print("asshole")
-                    await message.channel.send("LANGUAGE!!!")
-                if "FECKING" in mcu:
-                    print("fecking")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                    
-                if "DAMN" in mcu:
-                    print("damn")
-                    await message.channel.send("I'm not going to 'LANGUAGE!!!' you, but, don't use ||damn|| too much...")
-
 #STARTS WITH
 
             if mcu.startswith("YAY"):
                 await message.channel.send(":tada:")
             if mcu.startswith("YEY"):
                 await message.channel.send(":tada:")
-            #if message.author.id != 743009565242556526:
-                #if mcu.startswith("KILL"):
-                    #print("NO HITMAN STRIKE")
-                    #await message.channel.send("Sorry, only <@!743009565242556526> can order hitman strikes")
+            if message.author.id != 743009565242556526:
+                if mcu.startswith("KILL") and "@" in mcu:
+                    print("NO HITMAN STRIKE")
+                    await message.channel.send("Sorry, only <@!743009565242556526> can order hitman strikes")
 
             if message.author.id == 743009565242556526:
                 if mcu.startswith("Z!KILL"):
                     killed = mcu.split(" ")[-1]
                     print("KILLED USER")
                     await message.channel.send("Shot " + killed + "\n" + "https://tenor.com/view/shoot-gift-gif-13384546")
-            #if mcu.startswith("HALLO"):
-                #await message.channel.send("Hey")
 
 #EVERYBODY - Fun
 
@@ -373,13 +325,59 @@ class MyClient(discord.Client):
 #            thonkingbutcool = client.get_emoji(793356545127612456)
 #            await message.add_reaction(thonkingbutcool)
 
-            #if mcu == "OH K":
-                #print("OH K")
-                #thonkingbutcool = client.get_emoji(793356545127612456)
-                #await message.add_reaction(thonkingbutcool)
+            if mcu == "OH K":
+                print("OH K")
+                thonkingbutcool = client.get_emoji(793356545127612456)
+                await message.add_reaction(thonkingbutcool)
+
+#SWEAR STOP
+            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697 and message.channel.id != 802285907381059685:
+                if "WTF" in mcu:
+                    print("wtf")
+                    await message.channel.send("HEY!!! NO SWEARING!!!")
+                if "FECK" in mcu:
+                    print("feck")
+                    await message.channel.send("What *is* 'Feck'?!? :joy:")
+                if "FUCK" in mcu:
+                    print("fuck")
+                    await message.channel.send("LANGUAGE!!!")
+                if "SHIT" in mcu:
+                    print("shit")
+                    await message.channel.send("LANGUAGE!!!")
+                if "BITCH" in mcu:
+                    print("bitch")
+                    await message.channel.send("LANGUAGE!!!")
+                if "BASTARD" in mcu:
+                    print("bastard")
+                    await message.channel.send("HEY!!! NO SWEARING!!!")
+                if "RETARDED" in mcu:
+                    print("retarded")
+                    await message.channel.send("LANGUAGE!!!")
+                if "NIGGER" in mcu:
+                    print("nigger")
+                    await message.channel.send("HEY!!! NO SWEARING!!!")
+                if "NIGGA" in mcu:
+                    print("nigga")
+                    await message.channel.send("LANGUAGE!!!")
+                if "SH*T" in mcu:
+                    print("sh*t")
+                    await message.channel.send("HEY!!! NO SWEARING!!!")
+                if "STFU" in mcu:
+                    print("stfu")
+                    await message.channel.send("LANGUAGE!!!")
+                if "ASSHOLE" in mcu:
+                    print("asshole")
+                    await message.channel.send("LANGUAGE!!!")
+                if "FECKING" in mcu:
+                    print("fecking")
+                    await message.channel.send("HEY!!! NO SWEARING!!!")
+                    
+                if "DAMN" in mcu:
+                    print("damn")
+                    await message.channel.send("I'm not going to 'LANGUAGE!!!' you, but, don't use ||damn|| too much...")
 
 
 print("Code is running")
 
 client = MyClient()
-client.run("NzgzNjQ4NDg1MTUyNzg0NDA2.X8dzhg.PpH4az9OSnakulXAB66HxMNWqBk")
+client.run("BOT_TOKEN_HERE")
