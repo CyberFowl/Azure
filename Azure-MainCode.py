@@ -6,12 +6,14 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print("Logged in")
 
+#        These are just statuses that you can play around with:        
+        
 #        await client.change_presence(status = discord.Status.idle)
 #        await client.change_presence(activity=discord.Game(name="tag with the wolves"))
 #        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the wolves howl"))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
-#        await client.change_presence(activity=discord.Activity.watching, name="the pack")) 
+#        await client.change_presence(activity=discord.Activity.watching, name="the pack"))
 
     async def on_member_join(member):
         await client.send_message(member,"Welcome!")
@@ -48,13 +50,7 @@ class MyClient(discord.Client):
 
             if mcu == "Z!OWNER":
                 print("Griffin info")
-
-            #h = ["Heads","Tails"]
-            #if mcu == "Z!COINFLIP":
-                #n = random.randint(h[0],h[1])
-                #print("Coinflip")
-                #await message.channel.send(n)
-
+            
             if mcu == "REE IS DUMB":
                 print("Message received")
                 await message.channel.send("NO, NEITHER REEEEE THE DESTROYER NOR REEEEBEKA IS DUMB!! ||Though maybe you are!!||")
@@ -131,6 +127,10 @@ class MyClient(discord.Client):
                 embed=discord.Embed(title="Spotify: Liked songs", url="https://open.spotify.com/collection/tracks")
                 await message.channel.send(embed=embed)
 
+            if mcu == "Z!INVITE":
+                embed=discord.Embed(title="Invite the bot", description="Ivite the bot here^", url="https://discord.com/api/oauth2/authorize?client_id=783648485152784406&permissions=518208&scope=bot")
+                await message.channel.send(embed=embed)
+
 
 #P!OWNER
                 
@@ -199,37 +199,41 @@ class MyClient(discord.Client):
                     embed=discord.Embed(title="Spotify: Liked Songs.", url="https://open.spotify.com/collection/tracks")
                     await message.channel.send(embed=embed)
                     await message.channel.send("Here you go boss!")
-
-                #if mcu.startswith("z!remember") and not mcu.startswith("z!remember2") and not mcu.startswith("z!remember3"):
-                #    recall = mcu.split(" ")[1:]
-                #    await message.channel.send("Remembered. Use z!recall to display it again.")
-                #listToStr = " ".join(recall)
-                #if mcu == "z!recall":
-                #    await message.channel.send(listToStr)
-                #    await message.channel.send("Here you go ^")
-
-                #if mcu.startswith("z!remember2"):
-                #    recall2 = mcu.split(" ")[1:]
-                #    await message.channel.send("Remembered. Use z!recall2 to display it again.")
-                #listToStr2 = " ".join(recall2)
-                #if mcu == "z!recall2":
-                #    await message.channel.send(listToStr2)
-                #    await message.channel.send("Here you go ^")
-
-                #if mcu.startswith("z!remember3"):
-                #    recall3 = mcu.split(" ")[1:]
-                #    await message.channel.send("Remembered. Use z!recall3 to display it again.")
-                #listToStr3 = " ".join(recall3)
-                #if mcu == "z!recall3":
-                #    await message.channel.send(listToStr3)
-                #    await message.channel.send("Here you go ^")
-
+                    
                 if mcu == "HELP":
                     print("Message received")
                     await message.channel.send("¯\_(ツ)_/¯ What do you want help with? ||(Keeping in mind that I can't help a lot anyway)||")
                 if mcu == "HMM CAN YOU MAKE ME A COFFEE?":
                     print("Message received")
                     await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
+
+#CODENINJAS
+            if message.author.id == 743009565242556526 or message.author.id == 737661910194847836 or message.author.id == 690227486721966130:
+
+                if mcu == "Z!H":
+                    print("Next Hackathon")
+                    embed=discord.Embed(title = "Latest Hackathon", url = "https://organize.mlh.io/participants/events/6397-impractical-hackers", color = 0x006eff)
+                    embed.set_thumbnail(url = "https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/181/377/thumb/Impractical-Hackers_mlh-event-hero_%281%29.png?1610709803")
+                    embed.add_field(name = "Impractical Hackers", value = "Do something silly or impractical.", inline = False)
+                    embed.add_field(name = "Prizes:", value = "~", inline = False)
+                    embed.add_field(name = ":star: First Overall", value = "Google Nest Hub + MLH Swag", inline = False)
+                    embed.add_field(name = ":star: Second Overall", value = "Anker Soundcore Wireless Earbuds + MLH Swag", inline = False)
+                    embed.add_field(name = ":star: Third Overall", value = "Anker PowerCore Portable Charger + MLH Swag", inline = False)
+                    embed.add_field(name = ":star: Most Impractical Hack", value = "Create a silly whimsical hack this weekend. Wear your creative caps to build something impractical and get a chance to win Arduino Starter Kits.", inline = False)
+                    embed.add_field(name = ":star: My First Goofy Hack", value = "This is for the newbies, we're looking for the rookie hackers taking the lead and coming together to build their first goofy hack. Together they embark on winning this category under the guidance of experienced hackers. The team made up of at least 50% first-time hackers with our favorite project will take home Smart Power Plugs and MLH Swag.", inline = False)
+                    embed.add_field(name = ":star: Best use of Google Cloud", value = "Build your hackathon project with a suite of secure storage, powerful compute, and integrated data analytics products provided by Google Cloud. See full list of products here: g.co/cloud. Each winning team member will receive a Google Branded Parkland Academy Backpack.", inline = False)
+                    embed.add_field(name = ":star: Best Domain Name from Domain.com", value = "Register a .tech, .space, or .online domain name using Domain.com during the weekend. Each team may submit one entry per person on the team. Each winning team member will receive a PowerSquare Qi Wireless Phone Charger & Domain.com Backpack.", inline = False)
+                    embed.add_field(name = ":star: Best Hardware Hack presented by Digi-Key (2)", value = "Using your preferred hardware or hardware emulator, build a hack for your chance to win a Grove Beginner Kit, with Arduino Uno R3 included. We select two winning teams for this category. Each winning team member will receive a prize!", inline = False)
+                    embed.add_field(name = ":star: Best Domain Name from GoDaddy Registry [APAC Only]", value = "GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win a Hack from Home Kit! Each Kit contains wireless earbuds, blue light glasses, selfie ring light and a pouch for easy transport.", inline = False)
+                    embed.set_footer(text="Made and owned by CyberFowl#8931")
+                    await message.channel.send(embed = embed)
+
+                if mcu == "Z!AIM":
+                    print("Prize Aim")
+                    embed=discord.Embed(title = "Prize Aim", description = "The prize we are going for!", url = "https://organize.mlh.io/participants/events/6397-impractical-hackers", color = 0x006eff)
+                    embed.add_field(name = ":star: My First Goofy Hack", value = "This is for the newbies, we're looking for the rookie hackers taking the lead and coming together to build their first goofy hack. Together they embark on winning this category under the guidance of experienced hackers. The team made up of at least 50% first-time hackers with our favorite project will take home Smart Power Plugs and MLH Swag.", inline = False)
+                    embed.set_footer(text="Made and owned by CyberFowl#8931")
+                    await message.channel.send(embed = embed)
 
 #REEEEE THE DESTROYER
 
