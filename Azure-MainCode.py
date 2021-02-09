@@ -212,26 +212,28 @@ class MyClient(discord.Client):
 
                 if mcu == "Z!H":
                     print("Next Hackathon")
-                    embed=discord.Embed(title = "Latest Hackathon", url = "https://organize.mlh.io/participants/events/6397-impractical-hackers", color = 0x006eff)
-                    embed.set_thumbnail(url = "https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/181/377/thumb/Impractical-Hackers_mlh-event-hero_%281%29.png?1610709803")
-                    embed.add_field(name = "Impractical Hackers", value = "Do something silly or impractical.", inline = False)
+                    embed=discord.Embed(title = "Latest Hackathon", url = "https://organize.mlh.io/participants/events/6413-hackthrob", color = 0xff0033)
+                    embed.set_thumbnail(url = "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/001/359/964/datas/original.png")
+                    embed.add_field(name = "HackThrob", value = "Do something related to Valentines Day.", inline = False)
                     embed.add_field(name = "Prizes:", value = "~", inline = False)
                     embed.add_field(name = ":star: First Overall", value = "Google Nest Hub + MLH Swag", inline = False)
                     embed.add_field(name = ":star: Second Overall", value = "Anker Soundcore Wireless Earbuds + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Third Overall", value = "Anker PowerCore Portable Charger + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Most Impractical Hack", value = "Create a silly whimsical hack this weekend. Wear your creative caps to build something impractical and get a chance to win Arduino Starter Kits.", inline = False)
-                    embed.add_field(name = ":star: My First Goofy Hack", value = "This is for the newbies, we're looking for the rookie hackers taking the lead and coming together to build their first goofy hack. Together they embark on winning this category under the guidance of experienced hackers. The team made up of at least 50% first-time hackers with our favorite project will take home Smart Power Plugs and MLH Swag.", inline = False)
+                    embed.add_field(name = ":star: Third Overall", value = "Unspecified", inline = False)
+                    embed.add_field(name = ":star: MLH Bonus Category 1", value = "Unspecified", inline = False)
+                    embed.add_field(name = ":star: MLH Bonus Category 2", value = "Unspecified", inline = False)
                     embed.add_field(name = ":star: Best use of Google Cloud", value = "Build your hackathon project with a suite of secure storage, powerful compute, and integrated data analytics products provided by Google Cloud. See full list of products here: g.co/cloud. Each winning team member will receive a Google Branded Parkland Academy Backpack.", inline = False)
                     embed.add_field(name = ":star: Best Domain Name from Domain.com", value = "Register a .tech, .space, or .online domain name using Domain.com during the weekend. Each team may submit one entry per person on the team. Each winning team member will receive a PowerSquare Qi Wireless Phone Charger & Domain.com Backpack.", inline = False)
                     embed.add_field(name = ":star: Best Hardware Hack presented by Digi-Key (2)", value = "Using your preferred hardware or hardware emulator, build a hack for your chance to win a Grove Beginner Kit, with Arduino Uno R3 included. We select two winning teams for this category. Each winning team member will receive a prize!", inline = False)
                     embed.add_field(name = ":star: Best Domain Name from GoDaddy Registry [APAC Only]", value = "GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win a Hack from Home Kit! Each Kit contains wireless earbuds, blue light glasses, selfie ring light and a pouch for easy transport.", inline = False)
+                    embed.add_field(name = ":star: Best Use of CockroachDB", value = "Build your hackathon project on CockroachDB's open source and indestructible SQL database. Utilize CockroachDB in your hack for a chance to win a 3D printing pen for each team member. What's more, ALL projects submitted that use CockroachDB will receive a free t-shirt!", inline = False)
                     embed.set_footer(text="Made and owned by CyberFowl#8931")
                     await message.channel.send(embed = embed)
 
                 if mcu == "Z!AIM":
                     print("Prize Aim")
-                    embed=discord.Embed(title = "Prize Aim", description = "The prize we are going for!", url = "https://organize.mlh.io/participants/events/6397-impractical-hackers", color = 0x006eff)
-                    embed.add_field(name = ":star: My First Goofy Hack", value = "This is for the newbies, we're looking for the rookie hackers taking the lead and coming together to build their first goofy hack. Together they embark on winning this category under the guidance of experienced hackers. The team made up of at least 50% first-time hackers with our favorite project will take home Smart Power Plugs and MLH Swag.", inline = False)
+                    embed=discord.Embed(title = "Prize Aim", description = "The prize we are going for!", url = "https://organize.mlh.io/participants/events/6413-hackthrob", color = 0xff0033)
+                    #embed.add_field(name = ":star:", value = "", inline = False)
+                    embed.add_field(name = "404 Aim Not Found", value = "Aim not speccified/decided yet.", inline = False)
                     embed.set_footer(text="Made and owned by CyberFowl#8931")
                     await message.channel.send(embed = embed)
 
@@ -333,53 +335,6 @@ class MyClient(discord.Client):
                 print("OH K")
                 thonkingbutcool = client.get_emoji(793356545127612456)
                 await message.add_reaction(thonkingbutcool)
-
-#SWEAR STOP
-            if "||" not in mcu and message.guild.id != 570023579215724547 and message.author != 727964715216797697 and message.channel.id != 802285907381059685:
-                if "WTF" in mcu:
-                    print("wtf")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "FECK" in mcu:
-                    print("feck")
-                    await message.channel.send("What *is* 'Feck'?!? :joy:")
-                if "FUCK" in mcu:
-                    print("fuck")
-                    await message.channel.send("LANGUAGE!!!")
-                if "SHIT" in mcu:
-                    print("shit")
-                    await message.channel.send("LANGUAGE!!!")
-                if "BITCH" in mcu:
-                    print("bitch")
-                    await message.channel.send("LANGUAGE!!!")
-                if "BASTARD" in mcu:
-                    print("bastard")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "RETARDED" in mcu:
-                    print("retarded")
-                    await message.channel.send("LANGUAGE!!!")
-                if "NIGGER" in mcu:
-                    print("nigger")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "NIGGA" in mcu:
-                    print("nigga")
-                    await message.channel.send("LANGUAGE!!!")
-                if "SH*T" in mcu:
-                    print("sh*t")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                if "STFU" in mcu:
-                    print("stfu")
-                    await message.channel.send("LANGUAGE!!!")
-                if "ASSHOLE" in mcu:
-                    print("asshole")
-                    await message.channel.send("LANGUAGE!!!")
-                if "FECKING" in mcu:
-                    print("fecking")
-                    await message.channel.send("HEY!!! NO SWEARING!!!")
-                    
-                if "DAMN" in mcu:
-                    print("damn")
-                    await message.channel.send("I'm not going to 'LANGUAGE!!!' you, but, don't use ||damn|| too much...")
-
 
 print("Code is running")
 
