@@ -49,8 +49,14 @@ class MyClient(discord.Client):
                     killed = mcu.split(" ")[-1]
                     print("KILLED USER")
                     await message.channel.send("Shot " + killed + "\n" + "https://tenor.com/view/shoot-gift-gif-13384546")
+#VARIABLES/LISTS
+            ball_response = ["As I see it, yes", "Yes", "No", "Very likely", "Very unlikely", "Not even close", "Maybe", "Ask again later", "Better not tell you now", "Don't count on it", "It is certain"]
+            lucky_phrase = random.randint(0,len(ball_response)-1)
 
 #EVERYBODY - Fun
+            if mcu.startswith("Z!8BALL"):
+                print("8ball")
+                await message.channel.send(ball_response[lucky_phrase])
 
             if mcu == "Z!OWNER":
                 print("Griffin info")
@@ -327,6 +333,8 @@ class MyClient(discord.Client):
                 await edit.edit(content = "This is a long message.")
                 time.sleep(2)
 
+
+
 #REACTIONS
 #            thonkingbutcool = client.get_emoji(793356545127612456)
 #            await message.add_reaction(thonkingbutcool)
@@ -354,12 +362,11 @@ class MyClient(discord.Client):
                 embed.set_footer(text = "Made and owned by CyberFowl#8931")
                 await message.channel.send(embed = embed)
                 print("Made an embed")
-                edit = await message.channel.send("||Give me manage messages perms to delete the original message||")
-                time.sleep(5)
-                await edit.edit(content = "^")
 
 #FAILSAFE
             if mcu == "Z!EXIT":
+                await message.channel.send("Bot is shutting down now.")
+                await message.channel.send("<@!743009565242556526>, bot was shutdown by " + str(message.author))
                 sys.exit()
 
 print("Code is running")
