@@ -1,6 +1,7 @@
 import discord
 import time
 import random
+import sys
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -11,7 +12,7 @@ class MyClient(discord.Client):
 #        await client.change_presence(status = discord.Status.idle)
 #        await client.change_presence(activity=discord.Game(name="tag with the wolves"))
 #        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
-#        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the wolves howl"))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Dont Stop Believin' - Journey"))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
 #        await client.change_presence(activity=discord.Activity.watching, name="the pack"))
 
@@ -23,6 +24,7 @@ class MyClient(discord.Client):
         global recall
 
         mcu = message.content.upper()
+        justmc = message.content
         if message.author != client.user:
             
             if "doggo" in mcu:
@@ -35,6 +37,8 @@ class MyClient(discord.Client):
                 await message.channel.send(":tada:")
             if mcu.startswith("YEY"):
                 await message.channel.send(":tada:")
+            if mcu.startswith("Z!AA"):
+                await message.channel.send("https://tenor.com/view/angry-anger-pixar-inside-out-aaah-gif-5628546")
             if message.author.id != 743009565242556526:
                 if mcu.startswith("KILL") and "@" in mcu:
                     print("NO HITMAN STRIKE")
@@ -183,12 +187,7 @@ class MyClient(discord.Client):
                 if mcu == ("P!RMY"):
                     print("PING RAMMY")
                     for i in range(1,6):
-                        await message.channel.send("<@!737661910194847836>")
-                        time.sleep(2)		
-                    
-                if mcu == "Z!STATUS":
-                    print("status report")
-                    await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
+                        await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
 
                 if mcu == "IS AR WEIRD?":
                     print("Message received")
@@ -279,11 +278,11 @@ class MyClient(discord.Client):
 
                 if mcu == "250 MEMBERS":
                     print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
+                    await message.channel.send(":tada: :tada: YAY!!! 250 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
 
                 if mcu == "300 MEMBERS":
                     print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
+                    await message.channel.send(":tada: :tada: YAY!!! 300 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
 
 #EMOJIS
             if mcu== "Z!AVATAR":
@@ -312,8 +311,9 @@ class MyClient(discord.Client):
                 
             if mcu.startswith("DISTRACT THEM") or mcu.startswith("DISTRACT HIM"):
                 print("Distraction dance")
-                await message.channel.send("<a:AmongDistracted:803394547203309619>")
-
+                for i in range(1,6):
+                    await message.channel.send("<a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619>")
+                    time.sleep(2)
 #EDITS
             if mcu == "EDIT TEST":
                 edit = await message.channel.send("This")
@@ -335,6 +335,32 @@ class MyClient(discord.Client):
                 print("OH K")
                 thonkingbutcool = client.get_emoji(793356545127612456)
                 await message.add_reaction(thonkingbutcool)
+
+#ROLE STUFF (IN PROGRESS)
+            if mcu.startswith("Z!ROLE.APPEND") and message.author.id == 743009565242556526:
+                print("ROLE")
+                roleid = mcu.split(" ")[-1]
+                role = discord.Object(int(roleid))
+                await message.author.add_roles(role)
+                await message.channel.send("Role added")
+
+#EMBEDIFY
+            if justmc.startswith("z!embed"):
+                print("Message recieved")
+                content = justmc.split(" ")[1:]
+                space = " "
+                string = space.join(content)
+                embed = discord.Embed(title = string, color = 0xff0033)
+                embed.set_footer(text = "Made and owned by CyberFowl#8931")
+                await message.channel.send(embed = embed)
+                print("Made an embed")
+                edit = await message.channel.send("||Give me manage messages perms to delete the original message||")
+                time.sleep(5)
+                await edit.edit(content = "^")
+
+#FAILSAFE
+            if mcu == "Z!EXIT":
+                sys.exit()
 
 print("Code is running")
 
