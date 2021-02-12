@@ -193,7 +193,7 @@ class MyClient(discord.Client):
                 if mcu == ("P!RMY"):
                     print("PING RAMMY")
                     for i in range(1,6):
-                        await message.channel.send("https://tenor.com/view/status-tired-dead-haggard-gif-11733031")
+                        await message.channel.send("<@!737661910194847836>")
 
                 if mcu == "IS AR WEIRD?":
                     print("Message received")
