@@ -5,14 +5,14 @@ import sys
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        print("Logged in")
+        print("Bot is online!")
 
 #        These are just statuses that you can play around with:        
         
 #        await client.change_presence(status = discord.Status.idle)
 #        await client.change_presence(activity=discord.Game(name="tag with the wolves"))
 #        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="Dont Stop Believin' - Journey"))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=""))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
 #        await client.change_presence(activity=discord.Activity.watching, name="the pack"))
 
@@ -25,6 +25,7 @@ class MyClient(discord.Client):
 
         mcu = message.content.upper()
         justmc = message.content
+
         if message.author != client.user:
             
             if "doggo" in mcu:
@@ -147,30 +148,30 @@ class MyClient(discord.Client):
     #ATLANTIS
             if mcu == "P!OWNER" and message.guild.id == 788293597379166228:
                 print ("ping saanvi")
-                await message.channel.send("<@!727964715216797697>")
-                time.sleep(2)
-                await message.channel.send("Successfully Pinged Owner")
+                for i in range(1,6):
+                    await message.channel.send("<@!727964715216797697>")
+                    time.sleep(2)
 
     #CULT O COFFEE
             if mcu == "P!OWNER" and message.guild.id == 769557583429369867:
                 print ("ping ree the des")
-                await message.channel.send("<@!690227486721966130>")
-                time.sleep(2)
-                await message.channel.send("Successfully Pinged Owner")
+                for i in range(1,6):
+                    await message.channel.send("<@!690227486721966130>")
+                    time.sleep(2)
 
     #CHOCOLATE CULT
             if mcu == "P!OWNER" and message.guild.id == 775901922871214101:
                 print ("ping anna")
-                await message.channel.send("<@!760603081573400576>")
-                time.sleep(2)
-                await message.channel.send("Successfully Pinged Owner")
+                for i in range(1,6):
+                    await message.channel.send("<@!760603081573400576>")
+                    time.sleep(2)
 
     #TECH TERRAIN
             if mcu == "P!OWNER" and message.guild.id == 746952048053977148:
                 print ("ping rammy")
-                await message.channel.send("<@!737661910194847836>")
-                time.sleep(2)
-                await message.channel.send("Successfully Pinged Owner")
+                for i in range(1,6):
+                    await message.channel.send("<@!737661910194847836>")
+                    time.sleep(2)
 
 #CYBERFOWL
 
@@ -223,9 +224,9 @@ class MyClient(discord.Client):
                     embed.add_field(name = "Prizes:", value = "~", inline = False)
                     embed.add_field(name = ":star: First Overall", value = "Google Nest Hub + MLH Swag", inline = False)
                     embed.add_field(name = ":star: Second Overall", value = "Anker Soundcore Wireless Earbuds + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Third Overall", value = "Unspecified", inline = False)
-                    embed.add_field(name = ":star: MLH Bonus Category 1", value = "Unspecified", inline = False)
-                    embed.add_field(name = ":star: MLH Bonus Category 2", value = "Unspecified", inline = False)
+                    embed.add_field(name = ":star: Third Overall", value = "Anker PowerCore Portable Charger + MLH Swag", inline = False)
+                    embed.add_field(name = ":star: Most Heartfelt Hack", value = "It's Valentine's Day weekend and hacking is in the air! Why don't you celebrate by creating your favorite on-theme hacks? The best hack will win Minipresso Portable Expresso Machine.", inline = False)
+                    embed.add_field(name = ":star: Achy Breaky Hack", value = "Listen to your achy breaky heart and try something new this weekend. Work with new technologies and explore different domains for the first time. If you're a beginner, this is your chance to build a project from scratch. The winning team members take home Fuji Film Instax Camera.", inline = False)
                     embed.add_field(name = ":star: Best use of Google Cloud", value = "Build your hackathon project with a suite of secure storage, powerful compute, and integrated data analytics products provided by Google Cloud. See full list of products here: g.co/cloud. Each winning team member will receive a Google Branded Parkland Academy Backpack.", inline = False)
                     embed.add_field(name = ":star: Best Domain Name from Domain.com", value = "Register a .tech, .space, or .online domain name using Domain.com during the weekend. Each team may submit one entry per person on the team. Each winning team member will receive a PowerSquare Qi Wireless Phone Charger & Domain.com Backpack.", inline = False)
                     embed.add_field(name = ":star: Best Hardware Hack presented by Digi-Key (2)", value = "Using your preferred hardware or hardware emulator, build a hack for your chance to win a Grove Beginner Kit, with Arduino Uno R3 included. We select two winning teams for this category. Each winning team member will receive a prize!", inline = False)
@@ -345,12 +346,12 @@ class MyClient(discord.Client):
                 await message.add_reaction(thonkingbutcool)
 
 #ROLE STUFF (IN PROGRESS)
-            if mcu.startswith("Z!ROLE.APPEND") and message.author.id == 743009565242556526:
-                print("ROLE")
-                roleid = mcu.split(" ")[-1]
-                role = discord.Object(int(roleid))
-                await message.author.add_roles(role)
-                await message.channel.send("Role added")
+            if message.guild.id == 769557583429369867:
+                if mcu == "Z!ADD REBEL":
+                    print("REBEL ALERT!!")
+                    role = discord.Object(777211683315253288)
+                    await message.author.add_roles(role)
+                    await message.channel.send("You are a rebel now :cry: Well, that's unfortunate...")
 
 #EMBEDIFY
             if justmc.startswith("z!embed"):
@@ -369,7 +370,7 @@ class MyClient(discord.Client):
                 await message.channel.send("<@!743009565242556526>, bot was shutdown by " + str(message.author))
                 sys.exit()
 
-print("Code is running")
+print("Booting up...")
 
 client = MyClient()
 client.run("BOT_TOKEN_HERE")
