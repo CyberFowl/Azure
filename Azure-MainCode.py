@@ -368,7 +368,7 @@ class MyClient(discord.Client):
             if mcu == "Z!EXIT":
                 await message.delete()
                 await message.channel.send("Bot is shutting down now.")
-                await message.channel.send("<@!743009565242556526>, bot was shutdown by " + str(message.author))
+                await message.channel.send("<@!743009565242556526>, bot was shutdown by <@!" + str(message.author.id) + ">")
                 sys.exit()
 
 print("Booting up...")
