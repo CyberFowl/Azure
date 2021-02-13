@@ -366,6 +366,7 @@ class MyClient(discord.Client):
 
 #FAILSAFE
             if mcu == "Z!EXIT":
+                await message.delete()
                 await message.channel.send("Bot is shutting down now.")
                 await message.channel.send("<@!743009565242556526>, bot was shutdown by " + str(message.author))
                 sys.exit()
@@ -373,4 +374,4 @@ class MyClient(discord.Client):
 print("Booting up...")
 
 client = MyClient()
-client.run("BOT_TOKEN_HERE")
+client.run("NzgzNjQ4NDg1MTUyNzg0NDA2.X8dzhg.cHZMIhtKeiZzq_m2dNJ0n0Yi97Q")
