@@ -28,8 +28,19 @@ class MyClient(discord.Client):
 
         mcu = message.content.upper()
         justmc = message.content
-
-        if message.author != client.user and message.author.id != 794462654357962762:
+        
+        if mcu.startswith("Z!POLL"):
+            print("POLL")
+            op1 = justmc.split(":")[-2]
+            op2 = justmc.split(":")[-1]
+            embed = discord.Embed(title = "Poll by " + str(message.author), color = 0xff0033)
+            embed.add_field(name = op1, value = "Option 1 :one:", inline = False)
+            embed.add_field(name = op2, value = "Option 2 :two:", inline = False)
+            embed.add_field(name = "Note:", value = "For now, this command only supports only two polls." + "\n" + "Syntax: <z!poll :option 1:option 2>")
+            embed.set_footer(text = "Made and owned by CyberFowl#8931")
+            await message.channel.send("Poll:", embed = embed)
+      
+        if message.author != client.user:
             
             if "doggo" in mcu:
                 print("Message received")
@@ -366,7 +377,7 @@ class MyClient(discord.Client):
                     await message.channel.send("Yay!! You are not a rebel anymore!!")
 
 #EMBEDIFY
-            if justmc.startswith("z!embed"):
+            if mcu.startswith("Z!EMBED"):
                 print("Message recieved")
                 content = justmc.split(" ")[1:]
                 space = " "
