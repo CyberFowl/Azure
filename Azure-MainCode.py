@@ -3,6 +3,8 @@ import time
 import random
 import sys
 
+msgNo = 0
+
 class MyClient(discord.Client):
     async def on_ready(self):
         print("Bot is online!")
@@ -14,7 +16,7 @@ class MyClient(discord.Client):
 #        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
         await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=""))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
-#        await client.change_presence(activity=discord.Activity.watching, name="the pack"))
+#        await client.change_presence(activity=discord.Activity.watching, name="the pack")
 
     async def on_member_join(member):
         await client.send_message(member,"Welcome!")
@@ -22,11 +24,12 @@ class MyClient(discord.Client):
     async def on_message(self, message):
 
         global recall
+        global msgNo
 
         mcu = message.content.upper()
         justmc = message.content
 
-        if message.author != client.user:
+        if message.author != client.user and message.author.id != 794462654357962762:
             
             if "doggo" in mcu:
                 print("Message received")
@@ -334,7 +337,12 @@ class MyClient(discord.Client):
                 await edit.edit(content = "This is a long message.")
                 time.sleep(2)
 
-
+#VALENTINES DAY LOL
+        msgNo = msgNo + 1
+        if msgNo == 5:
+            love = client.get_emoji(810454892015648769)
+            await message.add_reaction(love)
+            msgNo = 0
 
 #REACTIONS
 #            thonkingbutcool = client.get_emoji(793356545127612456)
@@ -347,11 +355,15 @@ class MyClient(discord.Client):
 
 #ROLE STUFF (IN PROGRESS)
             if message.guild.id == 769557583429369867:
+                role = discord.Object(777211683315253288)
                 if mcu == "Z!ADD REBEL":
                     print("REBEL ALERT!!")
-                    role = discord.Object(777211683315253288)
                     await message.author.add_roles(role)
                     await message.channel.send("You are a rebel now :cry: Well, that's unfortunate...")
+                if mcu == "Z!REMOVE REBEL":
+                    print("Back from the dark side!!")
+                    await message.author.remove_roles(role)
+                    await message.channel.send("Yay!! You are not a rebel anymore!!")
 
 #EMBEDIFY
             if justmc.startswith("z!embed"):
