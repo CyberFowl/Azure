@@ -1,9 +1,10 @@
 import discord
-import time
 import random
 import sys
+from time import time, ctime
 
 msgNo = 0
+t = time()
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -23,23 +24,61 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
 
-        global recall
-        global msgNo
+        global recall, msgNo, link, phrase, space, time
 
         mcu = message.content.upper()
         justmc = message.content
-        
-        if mcu.startswith("Z!POLL"):
-            print("POLL")
-            op1 = justmc.split(":")[-2]
-            op2 = justmc.split(":")[-1]
-            embed = discord.Embed(title = "Poll by " + str(message.author), color = 0xff0033)
-            embed.add_field(name = op1, value = "Option 1 :one:", inline = False)
-            embed.add_field(name = op2, value = "Option 2 :two:", inline = False)
-            embed.add_field(name = "Note:", value = "For now, this command only supports only two polls." + "\n" + "Syntax: <z!poll :option 1:option 2>")
-            embed.set_footer(text = "Made and owned by CyberFowl#8931")
-            await message.channel.send("Poll:", embed = embed)
-      
+       
+#NITRO EMOJI VARIABLES
+    #RTX
+        dragontears = client.get_emoji(795731101083500564)
+        drafonexcite = client.get_emoji(795724032510394389)
+        dragonbigsmile = client.get_emoji(795731340439191655)
+        dragonblush = client.get_emoji(795731217877565491)
+        dragonchoco = client.get_emoji(795433637511561247)
+        dragoncool = client.get_emoji(795731424204030002)
+        dragoncringe = client.get_emoji(795731369748594750)
+        dragoncry = client.get_emoji(795724064567853079)
+        dragonhappy = client.get_emoji(795433742734590012)
+        dragonheadband = client.get_emoji(795731397628657714)
+        dragonheart = client.get_emoji(795723974701088839)
+        dragonhearteyes = client.get_emoji(795731172595990538)
+        dragonlove = client.get_emoji(795723937081589840)
+        dragonmlem = client.get_emoji(795731308831440916)
+        dragonnoop = client.get_emoji(795731139087826964)
+        dragonsad = client.get_emoji(795731059211632660)
+        dragonsmirk = client.get_emoji(795433540380262440)
+        dragonsurprised = client.get_emoji(795731256352309259)
+
+#POLLS 
+        if message.guild.id == 775901922871214101:
+            if mcu.startswith("Z!POLL"):
+                print("POLL - CHOCO SERVER")
+                op1 = justmc.split(":")[-2]
+                op2 = justmc.split(":")[-1]
+                embed = discord.Embed(title = "Poll by " + str(message.author), color = 0xff0033)
+                embed.add_field(name = op1, value = "Option 1 :one:", inline = False)
+                embed.add_field(name = op2, value = "Option 2 :two:", inline = False)
+                embed.add_field(name = "Note:", value = "For now, this command only supports only two polls." + "\n" + "Syntax: <z!poll :option 1:option 2>")
+                embed.set_footer(text = "Made and owned by CyberFowl#8931")
+                channel = client.get_channel(776217580595445770)
+                await channel.send("Poll:", embed = embed)
+            
+        if message.guild.id == 769557583429369867:
+            if mcu.startswith("Z!POLL"):
+                print("POLL - COFFEE SERVER")
+                op1 = justmc.split(":")[-2]
+                op2 = justmc.split(":")[-1]
+                embed = discord.Embed(title = "Poll by " + str(message.author), color = 0xff0033)
+                embed.add_field(name = op1, value = "Option 1 :one:", inline = False)
+                embed.add_field(name = op2, value = "Option 2 :two:", inline = False)
+                embed.add_field(name = "Note:", value = "For now, this command only supports only two options." + "\n" + "Syntax: <z!poll :option 1:option 2>")
+                embed.set_footer(text = "Made and owned by CyberFowl#8931")
+                channel = client.get_channel(774983135606734888)
+                await channel.send("Poll:", embed = embed)
+
+#IN      
+
         if message.author != client.user:
             
             if "doggo" in mcu:
@@ -68,10 +107,26 @@ class MyClient(discord.Client):
             ball_response = ["As I see it, yes", "Yes", "No", "Very likely", "Very unlikely", "Not even close", "Maybe", "Ask again later", "Better not tell you now", "Don't count on it", "It is certain"]
             lucky_phrase = random.randint(0,len(ball_response)-1)
 
-#EVERYBODY - Fun
+            space = " "
+
+#EVERYBODY
             if mcu.startswith("Z!8BALL"):
                 print("8ball")
                 await message.channel.send(ball_response[lucky_phrase])
+            
+            if mcu == "Z!COINFLIP":
+                coinflip = random.choice(["Heads", "Tails"])
+                print(coinflip)
+                await message.channel.send(coinflip)
+            
+            if mcu == "Z!DICE":
+                dice = random.choice(["1","2","3","4","5","6"])
+                print("Roll a die")
+                await message.channel.send(dice)
+
+            if mcu == "Z!BEGIN":
+                await message.channel.send("Azure was last restarted at " + str(ctime(t)) + " IST")
+                await message.channel.send(f"Also, the ping is  ***{round(client.latency * 1000)}ms***")
 
             if mcu == "Z!OWNER":
                 print("Griffin info")
@@ -190,6 +245,35 @@ class MyClient(discord.Client):
 #CYBERFOWL
 
             if message.author.id == 743009565242556526 or message.author.id == 690227486721966130:
+
+        #REMEMBERING STUFF
+
+                if mcu.startswith("<@!783648485152784406>") and "LINK" in mcu:
+                    print("REMEMBER LINK")
+                    link = justmc.split(" ")[-1]
+                    await message.channel.send("Added link")
+                    await message.channel.send("<:drafonexcite:795724032510394389>")
+
+                if mcu.startswith("<@!783648485152784406>") and "PHRASE" in mcu:
+                    print("REMEMBER PHRASE")
+                    phrase = justmc.split(" ")[1:]
+                    await message.channel.send("Added phrase")
+                    await message.channel.send("<:drafonexcite:795724032510394389>")
+
+                if mcu == "<@!783648485152784406> DL":
+                    print("DISPLAY LINK")
+                    await message.channel.send("Here it is: ")
+                    await message.channel.send(link)
+                    await message.channel.send("<:drafonexcite:795724032510394389>")
+                   
+                if mcu == "<@!783648485152784406> DP":
+                    print("DISPLAY PHRASE")
+                    await message.channel.send("Here it is: ")
+                    phrase = space.join(phrase)
+                    await message.channel.send(phrase)
+                    await message.channel.send("<:drafonexcite:795724032510394389>")
+
+        #NORMAL COMMANDS
 
                 if mcu.startswith("GN"):
                     print("GOOD NIGHT")
@@ -349,11 +433,11 @@ class MyClient(discord.Client):
                 time.sleep(2)
 
 #VALENTINES DAY LOL
-        msgNo = msgNo + 1
-        if msgNo == 5:
-            love = client.get_emoji(810454892015648769)
-            await message.add_reaction(love)
-            msgNo = 0
+            msgNo = msgNo + 1
+            if msgNo == 5:
+                love = client.get_emoji(810454892015648769)
+                await message.add_reaction(love)
+                msgNo = 0
 
 #REACTIONS
 #            thonkingbutcool = client.get_emoji(793356545127612456)
@@ -386,6 +470,18 @@ class MyClient(discord.Client):
                 embed.set_footer(text = "Made and owned by CyberFowl#8931")
                 await message.channel.send(embed = embed)
                 print("Made an embed")
+
+#CREDITS
+            if mcu == "Z!CREDS" or mcu == "Z!CREDITS":
+                print("CREDITS")
+                embed = discord.Embed(title = "<:drafonexcite:795724032510394389> Credits: (z!creds/z!credits)", description = "Members who (contributed to/helped me make) this bot", color = 0x53f200)
+                embed.add_field(name = "<:drafonexcite:795724032510394389> LordBusiness", value = "LordBusiness taught me how to make a bot, and also helped me when I had bugs/errors")
+                embed.add_field(name = "<:drafonexcite:795724032510394389> reeeeethedes", value = "ree was my partner and we both solved problems, stayed up late, and learnt more together")
+                embed.add_field(name = "<:drafonexcite:795724032510394389> Anaton", value = "Being a pro discord.py bot developer, he was always there when I could not find out how to do something as much as I searched")
+                embed.add_field(name = "<:drafonexcite:795724032510394389> rammy", value = "rammy supplied me with so many ideas that helped my bot become more advanced and fun!")
+                embed.add_field(name = "<:drafonexcite:795724032510394389> Rt/Rtx", value = "Rt drew all the dragon emojis in some of the commands, that look so cool!! *(Some of which are in this embed!)*")
+                embed.set_footer(text = "Made and owned by CyberFowl#8931")
+                await message.channel.send(embed = embed)
 
 #FAILSAFE
             if mcu == "Z!EXIT":
