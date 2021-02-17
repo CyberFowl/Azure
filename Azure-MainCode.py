@@ -1,7 +1,7 @@
 import discord
 import random
 import sys
-from time import time, ctime
+from time import time, ctime, sleep
 
 msgNo = 0
 t = time()
@@ -15,7 +15,7 @@ class MyClient(discord.Client):
 #        await client.change_presence(status = discord.Status.idle)
 #        await client.change_presence(activity=discord.Game(name="tag with the wolves"))
 #        await client.change_presence(activity=discord.Streaming(name="for the wolves", url="https://twitch.tv/cyberfowl"))
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=""))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="the wolves howl"))
 #        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.competing, name="leadership"))
 #        await client.change_presence(activity=discord.Activity.watching, name="the pack")
 
@@ -126,35 +126,16 @@ class MyClient(discord.Client):
 
             if mcu == "Z!BEGIN":
                 await message.channel.send("Azure was last restarted at " + str(ctime(t)) + " IST")
-                await message.channel.send(f"Also, the ping is  ***{round(client.latency * 1000)}ms***")
-
-            if mcu == "Z!OWNER":
-                print("Griffin info")
-            
-            if mcu == "REE IS DUMB":
-                print("Message received")
-                await message.channel.send("NO, NEITHER REEEEE THE DESTROYER NOR REEEEBEKA IS DUMB!! ||Though maybe you are!!||")
-
-            if mcu == "TOILET":
-                print("elmo in a toilet")
-                await message.channel.send("https://tenor.com/view/elmo-poop-pooping-time-to-poop-bathroom-gif-5885298")
+                await message.channel.send(f"Also, the ping is ***{round(client.latency * 1000)}ms***")
 
             if mcu == "F FOR RESPECT":
                 print("F FOR RESPECT")
-                time.sleep(2)
+                sleep(2)
                 await message.channel.send("F")
 
             if mcu == "BRUH":
                 print("BRUH MOMENT")
                 await message.channel.send("*(Bruh moment)*")
-
-            if mcu == "DRYICE CHARACTER SKETCH":
-                print("Message received")
-                await message.channel.send("DryIce weird bruh.")
-
-            if mcu == "HOMEWORK TIME" or mcu == "I GTG DO HOMEWORK":
-                print("Message received")
-                await message.channel.send("Ugh homework sux")
 
             if mcu.startswith("Z!HBD"):
                 bday = mcu.split(" ")[-1]
@@ -166,44 +147,15 @@ class MyClient(discord.Client):
                 print("hug")
                 await message.channel.send("You hug " + hug + "\n" + "https://tenor.com/view/dog-hug-bff-best-friend-friend-gif-9512793")
 
-            if mcu == "WHOS RAMMY?":
-                print("Message received")
-                await message.channel.send("Rammy's weird, bruh.")
-
-            if mcu == "PMUB D!":
-                print("PMUB D!")
-                await message.channel.send("!d bump")
-
-            if mcu == "RR PLS":
-                print ("rickroll")
-                embed=discord.Embed(title = "RR", url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                await message.channel.send(embed=embed)
-
-            if mcu == "IS GRIFFIN WEIRD?" and message.author.id != 743009565242556526:
-                await message.channel.send("NOPE, Griffin created me!!")
-
-            if mcu == "I LOVE COFFEE":
-                print("COFFEE!!")
-                await message.channel.send("<:red_archive:777977960359526401>")
-
             if mcu == 'Z!PING':
                 print('Z!ping') 
                 await message.channel.send(f":ping_pong: Pong! | Message took ***{round(client.latency * 1000)}ms*** to respond")
-
-            if mcu == "SACRIFICE!!":
-                print("Sacrifice!!")
-                await message.channel.send("https://tenor.com/view/dance-dancing-tribe-tribal-the-tribe-has-spoken-gif-16960649")
-
-            if mcu == "FLAMING ELMO":
-                print("Flaming elmo")
-                await message.channel.send("https://tenor.com/view/elmo-satan-fire-flame-burn-gif-4507786")
 
             if mcu.startswith("Z!PURGE"):
                 purge = mcu.split(" ")[-1]
                 await message.channel.purge(limit = int((purge)) + 1)
 
-            
-            if mcu == "MUSIC PLS" and message.author.id != 743009565242556526:
+            if mcu == "Z!SPOTIFY" and message.author.id != 743009565242556526:
                 embed=discord.Embed(title="Spotify: Liked songs", url="https://open.spotify.com/collection/tracks")
                 await message.channel.send(embed=embed)
 
@@ -219,28 +171,28 @@ class MyClient(discord.Client):
                 print ("ping saanvi")
                 for i in range(1,6):
                     await message.channel.send("<@!727964715216797697>")
-                    time.sleep(2)
+                    sleep(2)
 
     #CULT O COFFEE
             if mcu == "P!OWNER" and message.guild.id == 769557583429369867:
                 print ("ping ree the des")
                 for i in range(1,6):
                     await message.channel.send("<@!690227486721966130>")
-                    time.sleep(2)
+                    sleep(2)
 
     #CHOCOLATE CULT
             if mcu == "P!OWNER" and message.guild.id == 775901922871214101:
                 print ("ping anna")
                 for i in range(1,6):
                     await message.channel.send("<@!760603081573400576>")
-                    time.sleep(2)
+                    sleep(2)
 
     #TECH TERRAIN
             if mcu == "P!OWNER" and message.guild.id == 746952048053977148:
                 print ("ping rammy")
                 for i in range(1,6):
                     await message.channel.send("<@!737661910194847836>")
-                    time.sleep(2)
+                    sleep(2)
 
 #CYBERFOWL
 
@@ -279,20 +231,16 @@ class MyClient(discord.Client):
                     print("GOOD NIGHT")
                     await message.channel.send("Good Night!!")
 
-                if mcu.startswith("YEET"):
+                if mcu.startswith("Z!YEET"):
                     print("YEETED SOMEBODY")
                     await message.channel.send("YEETED" + "\n" + "https://tenor.com/view/yeet-lion-king-simba-rafiki-throw-gif-16194362")
 
-                if mcu == ("P!RTD"):
-                    print("PING REE THE DES")
+                if mcu.startswith("Z!P"):
+                    ping = justmc.split(" ")[-1]
+                    print("PING " + ping)
                     for i in range(1,6):
-                        await message.channel.send("<@!690227486721966130>")
-                        time.sleep(2)
-
-                if mcu == ("P!RMY"):
-                    print("PING RAMMY")
-                    for i in range(1,6):
-                        await message.channel.send("<@!737661910194847836>")
+                        await message.channel.send(ping)
+                        sleep(2)
 
                 if mcu == "IS AR WEIRD?":
                     print("Message received")
@@ -311,36 +259,6 @@ class MyClient(discord.Client):
                     print("Message received")
                     await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
 
-#CODENINJAS
-            if message.author.id == 743009565242556526 or message.author.id == 737661910194847836 or message.author.id == 690227486721966130:
-
-                if mcu == "Z!H":
-                    print("Next Hackathon")
-                    embed=discord.Embed(title = "Latest Hackathon", url = "https://organize.mlh.io/participants/events/6413-hackthrob", color = 0xff0033)
-                    embed.set_thumbnail(url = "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/001/359/964/datas/original.png")
-                    embed.add_field(name = "HackThrob", value = "Do something related to Valentines Day.", inline = False)
-                    embed.add_field(name = "Prizes:", value = "~", inline = False)
-                    embed.add_field(name = ":star: First Overall", value = "Google Nest Hub + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Second Overall", value = "Anker Soundcore Wireless Earbuds + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Third Overall", value = "Anker PowerCore Portable Charger + MLH Swag", inline = False)
-                    embed.add_field(name = ":star: Most Heartfelt Hack", value = "It's Valentine's Day weekend and hacking is in the air! Why don't you celebrate by creating your favorite on-theme hacks? The best hack will win Minipresso Portable Expresso Machine.", inline = False)
-                    embed.add_field(name = ":star: Achy Breaky Hack", value = "Listen to your achy breaky heart and try something new this weekend. Work with new technologies and explore different domains for the first time. If you're a beginner, this is your chance to build a project from scratch. The winning team members take home Fuji Film Instax Camera.", inline = False)
-                    embed.add_field(name = ":star: Best use of Google Cloud", value = "Build your hackathon project with a suite of secure storage, powerful compute, and integrated data analytics products provided by Google Cloud. See full list of products here: g.co/cloud. Each winning team member will receive a Google Branded Parkland Academy Backpack.", inline = False)
-                    embed.add_field(name = ":star: Best Domain Name from Domain.com", value = "Register a .tech, .space, or .online domain name using Domain.com during the weekend. Each team may submit one entry per person on the team. Each winning team member will receive a PowerSquare Qi Wireless Phone Charger & Domain.com Backpack.", inline = False)
-                    embed.add_field(name = ":star: Best Hardware Hack presented by Digi-Key (2)", value = "Using your preferred hardware or hardware emulator, build a hack for your chance to win a Grove Beginner Kit, with Arduino Uno R3 included. We select two winning teams for this category. Each winning team member will receive a prize!", inline = False)
-                    embed.add_field(name = ":star: Best Domain Name from GoDaddy Registry [APAC Only]", value = "GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win a Hack from Home Kit! Each Kit contains wireless earbuds, blue light glasses, selfie ring light and a pouch for easy transport.", inline = False)
-                    embed.add_field(name = ":star: Best Use of CockroachDB", value = "Build your hackathon project on CockroachDB's open source and indestructible SQL database. Utilize CockroachDB in your hack for a chance to win a 3D printing pen for each team member. What's more, ALL projects submitted that use CockroachDB will receive a free t-shirt!", inline = False)
-                    embed.set_footer(text="Made and owned by CyberFowl#8931")
-                    await message.channel.send(embed = embed)
-
-                if mcu == "Z!AIM":
-                    print("Prize Aim")
-                    embed=discord.Embed(title = "Prize Aim", description = "The prize we are going for!", url = "https://organize.mlh.io/participants/events/6413-hackthrob", color = 0xff0033)
-                    #embed.add_field(name = ":star:", value = "", inline = False)
-                    embed.add_field(name = "404 Aim Not Found", value = "Aim not speccified/decided yet.", inline = False)
-                    embed.set_footer(text="Made and owned by CyberFowl#8931")
-                    await message.channel.send(embed = embed)
-
 #REEEEE THE DESTROYER
 
             if message.author.id == 690227486721966130:
@@ -348,9 +266,9 @@ class MyClient(discord.Client):
                 if mcu == "HELP":
                     print("Message received")
                     await message.channel.send("¯\_(ツ)_/¯ What do you want help with? ||(Keeping in mind that I can't help a lot anyway)||")
-                if mcu == "HMM CAN YOU MAKE ME A COFFEE?":
+                if "COFFEE" in mcu:
                     print("Message received")
-                    await message.channel.send("Sorry, I'm not *that* advanced... Maybe ask me in, what? 5 years? Hopefully I can do it then... Hopefully...")
+                    await message.channel.send("Sorry, I don't make coffee lol")
 
 #REEEEBEKA_
             
@@ -359,35 +277,16 @@ class MyClient(discord.Client):
                 if mcu == "G!HELP":
                     for i in range(1,11):
                         await message.channel.send("<@!743009565242556526>")
-                        time.sleep(2)
+                        sleep(2)
 
 #MEMBER COUNT - CYBERFOWL ONLY
 
             if message.author.id == 743009565242556526:
 
-                if mcu == "50 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 50 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
-                    
-                if mcu == "100 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 100 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
- 
-                if mcu == "150 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 150 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
- 
-                if mcu == "200 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 200 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
-
-                if mcu == "250 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 250 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
-
-                if mcu == "300 MEMBERS":
-                    print("Message received")
-                    await message.channel.send(":tada: :tada: YAY!!! 300 MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")                 
+                if mcu.startswith("Z!") and "MEMBERS" in mcu:
+                    print("MEMBER COUNT")
+                    memberCount == mcu.split(" ")[1]
+                    await message.channel.send(":tada: :tada: YAY!!! " + memberCount  + " MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
 
 #EMOJIS
             if mcu== "Z!AVATAR":
@@ -407,42 +306,33 @@ class MyClient(discord.Client):
             if mcu == "Z!NITRO FLEX" and message.author.id == 743009565242556526:
                 print("NITRO FLEX")
                 await message.channel.send("<:CFLogo:800679960532615179>")
-                time.sleep(1)
+                sleep(1)
                 await message.channel.send("<:NightHawk:800679902923456553>")
-                time.sleep(1)
+                sleep(1)
                 await message.channel.send("<:Griffin2k20:800679874309390346>")
-                time.sleep(1)
+                sleep(1)
                 await message.channel.send("<:Azure:800679821013024769>")
                 
             if mcu.startswith("DISTRACT THEM") or mcu.startswith("DISTRACT HIM"):
                 print("Distraction dance")
                 for i in range(1,6):
-                    await message.channel.send("<a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619> <a:AmongDistracted:803394547203309619>")
-                    time.sleep(2)
-#EDITS
-            if mcu == "EDIT TEST":
-                edit = await message.channel.send("This")
-                time.sleep(2)
-                await edit.edit(content = "This is")
-                time.sleep(2)
-                await edit.edit(content = "This is a")
-                time.sleep(2)
-                await edit.edit(content = "This is a long")
-                time.sleep(2)
-                await edit.edit(content = "This is a long message.")
-                time.sleep(2)
+                    await message.channel.send("<a:AmongDistracted:803394547203309619> " * 5)
+                    sleep(2)
 
-#VALENTINES DAY LOL
-            msgNo = msgNo + 1
-            if msgNo == 5:
-                love = client.get_emoji(810454892015648769)
-                await message.add_reaction(love)
-                msgNo = 0
+#EDITS - STILL EXPERIMENTING
+            if mcu == "Z!EDIT":
+                edit = await message.channel.send("This")
+                sleep(2)
+                await edit.edit(content = "This is")
+                sleep(2)
+                await edit.edit(content = "This is a")
+                sleep(2)
+                await edit.edit(content = "This is a long")
+                sleep(2)
+                await edit.edit(content = "This is a long message.")
+                sleep(2)
 
 #REACTIONS
-#            thonkingbutcool = client.get_emoji(793356545127612456)
-#            await message.add_reaction(thonkingbutcool)
-
             if mcu == "OH K":
                 print("OH K")
                 thonkingbutcool = client.get_emoji(793356545127612456)
@@ -470,6 +360,13 @@ class MyClient(discord.Client):
                 embed.set_footer(text = "Made and owned by CyberFowl#8931")
                 await message.channel.send(embed = embed)
                 print("Made an embed")
+
+#TESTING GROUND
+            if message.guild.id == 773042587308785664:
+                if mcu == "Z!OWNER":
+                    print("Code works...")
+                    owner = discord.Guild.owner
+                    await message.channel.send(owner)
 
 #CREDITS
             if mcu == "Z!CREDS" or mcu == "Z!CREDITS":
