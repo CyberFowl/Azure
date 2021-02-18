@@ -208,7 +208,7 @@ class MyClient(discord.Client):
 
                 if mcu.startswith("<@!783648485152784406>") and "PHRASE" in mcu:
                     print("REMEMBER PHRASE")
-                    phrase = justmc.split(" ")[1:]
+                    phrase = justmc.split(" ")[2:]
                     await message.channel.send("Added phrase")
                     await message.channel.send("<:drafonexcite:795724032510394389>")
 
@@ -231,22 +231,21 @@ class MyClient(discord.Client):
                     print("GOOD NIGHT")
                     await message.channel.send("Good Night!!")
 
+                if mcu == "Z!Gah":
+                    await message.channel.send()
+
                 if mcu.startswith("Z!YEET"):
                     print("YEETED SOMEBODY")
                     await message.channel.send("YEETED" + "\n" + "https://tenor.com/view/yeet-lion-king-simba-rafiki-throw-gif-16194362")
 
-                if mcu.startswith("Z!P"):
+                if mcu.startswith("Z!PINGY"):
                     ping = justmc.split(" ")[-1]
                     print("PING " + ping)
                     for i in range(1,6):
                         await message.channel.send(ping)
                         sleep(2)
 
-                if mcu == "IS AR WEIRD?":
-                    print("Message received")
-                    await message.channel.send("Yep")
-
-                if mcu == "MUSIC PLS":
+                if mcu == "Z!SPOTIFY":
                     print("spotify link - boss")
                     embed=discord.Embed(title="Spotify: Liked Songs.", url="https://open.spotify.com/collection/tracks")
                     await message.channel.send(embed=embed)
@@ -289,7 +288,7 @@ class MyClient(discord.Client):
                     await message.channel.send(":tada: :tada: YAY!!! " + memberCount  + " MEMBERS!!! :tada: :tada:" + "\n" + "https://tenor.com/view/minion-woohoo-yeah-excited-cheer-gif-5002827")
 
 #EMOJIS
-            if mcu== "Z!AVATAR":
+            if mcu== "Z!<@!783648485152784406>":
                 print("Azure avatar")
                 await message.channel.send("<:Azure:800679821013024769>")
 
@@ -297,12 +296,6 @@ class MyClient(discord.Client):
                 print(":spookedhamster:")
                 await message.channel.send("<:Hamster_spooked:793356985609093150>")
 
-            if mcu == "JS":
-                print("JS LOGO")
-                await message.channel.send("<:JavaScriptlogo:800618033068245012>")
-            if mcu == "PYTHON":
-                print("PYTHON LOGO")
-                await message.channel.send("<:pythonlogo:800620334554415115>")            
             if mcu == "Z!NITRO FLEX" and message.author.id == 743009565242556526:
                 print("NITRO FLEX")
                 await message.channel.send("<:CFLogo:800679960532615179>")
@@ -313,7 +306,7 @@ class MyClient(discord.Client):
                 sleep(1)
                 await message.channel.send("<:Azure:800679821013024769>")
                 
-            if mcu.startswith("DISTRACT THEM") or mcu.startswith("DISTRACT HIM"):
+            if mcu.startswith("Z!DISTRACT"):
                 print("Distraction dance")
                 for i in range(1,6):
                     await message.channel.send("<a:AmongDistracted:803394547203309619> " * 5)
@@ -363,10 +356,14 @@ class MyClient(discord.Client):
 
 #TESTING GROUND
             if message.guild.id == 773042587308785664:
-                if mcu == "Z!OWNER":
+                if mcu == "Z!T":
                     print("Code works...")
-                    owner = discord.Guild.owner
-                    await message.channel.send(owner)
+                    owner = discord.Guild.owner.id
+                    await message.channel.send()
+        
+            if mcu == "Z!ME":
+                print("User info")
+                await message.channel.send("Name = " + str(message.author.name) + "\n" + "Discriminator = #" + str(message.author.discriminator) + "\n" + "Display name = " + str(message.author.display_name) + "\n" + "Avatar = " + "https://cdn.discordapp.com/avatars/" + str(message.author.id) + "/" + str(message.author.avatar) + ".png?size=128")
 
 #CREDITS
             if mcu == "Z!CREDS" or mcu == "Z!CREDITS":
@@ -390,4 +387,4 @@ class MyClient(discord.Client):
 print("Booting up...")
 
 client = MyClient()
-client.run("BOT_TOKEN_HERE")
+client.run("NzgzNjQ4NDg1MTUyNzg0NDA2.X8dzhg.8XiNWG55D4MuJLh7xQneJqjO1bY")
