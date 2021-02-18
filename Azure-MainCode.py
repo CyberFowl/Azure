@@ -387,4 +387,4 @@ class MyClient(discord.Client):
 print("Booting up...")
 
 client = MyClient()
-client.run("NzgzNjQ4NDg1MTUyNzg0NDA2.X8dzhg.8XiNWG55D4MuJLh7xQneJqjO1bY")
+client.run("BOT_TOKEN_HERE")
